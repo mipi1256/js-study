@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>브라우저입출력 JavaScript</title>
+</head>
+
+<body>
+
+  <script>
+    
+    // 브라우저에서 입력을 지원하는 함수 prompt()
+    // This will make the value into a 문자 not a number value
+    // So the numbers that you input will only be next to each other
+    var number1 = prompt('첫번째 숫자를 입력하세요!');
+    var number2 = prompt('두번째 숫자를 입력하세요!');
+
+    // alert () 함수는 브라우저에 알림창을 띄웁니다.
+    alert(`입력한 숫자의 함: ${number1 + number2}`);
+
+    console.log('------------------------------------------------');
+
+    // prompt 함수를 통해 입력받는 값은 문자열 타입으로 인식됩니다. 
+    // Adding a (+) infront of prompt will make the value register as a number
+    // The numbers that you input will add up and will give you the answer.
+    var number3 = +prompt('첫번째 숫자를 입력하세요!');
+    var number4 = +prompt('두번째 숫자를 입력하세요!');
+
+    alert(`입력한 숫자의 함: ${number3 + number4}`);
+
+
+  </script>
+
+</body>
+
+</html>
