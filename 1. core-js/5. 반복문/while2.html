@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문 While2 JavaScript</title>
+</head>
+
+<body>
+
+  <script>
+    // 48 ~ 150사이의 정수 중 8의 배수만 출려해 보자.
+
+    var n = 48;
+
+    // while (n <=150) {
+    //   if (n % 8 === 0) {
+    //     console.log(n);
+    //   }
+    //   n++;
+    // }
+
+    // This work because the variable n which is 48 can be divided by 8.
+    while (n <= 150) {
+      console.log(n);
+      n += 8;
+    }
+
+    console.log('---------------------------------------------------');
+
+    // 1000의 약수의 개수를 구하세요. The number that is able to divide with 1000
+    // 1부터 1000까지 하나씩 올려가면서 1000이랑 나눠보세요.
+    // 그랬을 때 나누어 떨어지는 수가 약수입니다.
+    // 출력하라는 게 아니라 개수를 구하라 했으니, 개수를 기억할 애가 필요하겠네요.
+
+    // var num = 1;
+    // var total = 0;
+
+    // while (num <= 1000) {
+    //   if (1000 % num === 0) {
+    //     total++;
+    //   }
+    //   num++;
+    // }
+    // console.log(total);
+
+    // console.log('---------------------------------------------------');
+
+    // var i =1;
+    // var cnt = 0;
+
+    // while(i <=1000){
+    //   if (1000 % i === 0) {
+    //     cnt++;
+    //   }
+    // }
+
+    // console.log(`1000의 약수의 개수` + cnt + `개`);
+
+
+    console.log('---------------------------------------------------');
+
+    /*
+    # 사용자에게 구구단 단수를 입력받아서
+    해당 단수의 구구단을 출력해 보세요.
+    ex)
+    
+    구구단을 입력하세요: 4
+    *** 구구단 4 단 ***
+    4 x 1 = 4
+    4 x 2 = 8
+    4 x 3 = 12
+    4 x 4 = 16 
+    .
+    .
+    .
+    4 x 9 = 36
+    */
+
+    // var p = +prompt('구구단을 입력하세요')
+    // var total = 0;
+
+    // while (p <=9){
+    //   if (p % p ===0){
+    //     total++;
+    //   }
+    //   p++;
+    // }
+
+    // console.log(`구구단` + p + `단`);
+    // console.log(`${p} x ${p++} = ${total}`);
+
+    var level = +prompt('구구단 단수를 입력하세요!')
+    console.log('*** 구구단 ${level}단 ***');
+
+    var j = 1;
+    while (j <= 9) {
+      console.log(`${level} X ${j} = ${level * j}`);
+      j++;
+    }
+    
+  </script>
+
+</body>
+
+</html>
