@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>산술연산자</title>
+</head>
+
+<body>
+
+  <script>
+    var num = 3;
+    //  (/) Will divide the two numbers which is 5.4
+    console.log(27 / 5); // 몫을 가져옴
+    // (%) Will show you the rest number when it cannot be divided equally which is 2
+    console.log(27 % 5); // 나머지를 가져옴
+    // Multiplication
+    console.log(num * num);
+    // The variable to the power of any number (**) or Math.pow(var, #)
+    console.log(num ** 4); // ES7 이후 출시된 거듭제곱 연산자
+    console.log(Math.pow(num, 4)); // ES7 이전에 사용하던 거듭제곱 함수
+
+    console.log('-----------------------------------------------------------------');
+
+    // 단항 산술 연산자 ++, --
+    var x = 3;
+    x++; // This will add 1 to the variable of x
+    --x; // This will subtract 1 to the variable of x
+    // The (++) or (--) can be added infront or behind the variable
+
+    console.log('x: ' + x);
+
+    // 전위(prefix), 후위(suffix) 연산
+    var a = 10;
+    var result;
+    result = a++; // 후위(suffix) 연사: 선연산 후증감 \ Result will get the a 값 and then a will add one making it 11
+    console.log(`result: ${result}, a: ${a}`);
+
+    result = ++a;
+    console.log(`result: ${result}, a: ${a}`); // 전위(prefix) 연산: 선증감 후연산 This will add 1 to the variable and then print the 값 for both result and a which will give the same 값
+
+    console.log('-------------------------------------------------------');
+
+    // 대입(할당) 연산자, 복합 대입 연산자
+    var i = 9;
+    i += 3; // i = i + 3 add
+    console.log(i);
+    i -= 8; // i = i - 12 subtract
+    console.log(i);
+    i *= 10; // i = i * 10 multiple
+    console.log(i);
+    i /= 8; // i = i / 8 divide
+    console.log(i);
+    i %= 3; // i = i % 3 the reminder
+    console.log(i);
+    i **= 4; // i = i ** 4 to the power of
+    console.log(i);
+
+
+</script>
+
+
+</body>
+
+</html>
