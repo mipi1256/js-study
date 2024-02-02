@@ -23,13 +23,26 @@
     - while문을 if else 로 나눠서 두번 쓰는 것은 지양하겠습니다.
     */
 
-    var x = +prompt('첫번째 정수를 입력하세요')
-    var y = +prompt('두번째 정수를 입력하세요')
+    var x = +prompt('첫번째 정수를 입력하세요');
+    var y = +prompt('두번째 정수를 입력하세요');
 
-    while (x <= y){
-      
+    if (x > y) { //If 'x' is bigger then it should change the number with 'y' for the code below to work. 
+      var temp = y; // There is a need for a new variable for the switch. If there is no switch then 'y' and 'x' value will turned to be the same.
+      y = x;
+      x = temp;
+    }
+
+    var total = 0;
+    var n = x; //If you don't add this to the code then the 'x' value print to be the number that the user input plus 1
+
+    while (x <= y) {
+      total += x;
       x++;
     }
+
+    console.log(`${n}부터 ${y}까지의 누적합계: ${total}`);
+
+
   </script>
 
 
