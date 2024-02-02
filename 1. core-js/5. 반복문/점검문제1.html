@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 점검문제1</title>
+</head>
+
+<body>
+
+  <script>
+    // 1 ~ 100 사이의 랜덤한 숫자하나가 정답으로 주어진다.
+    // 사용자는 이 사이의 숫자를 입력할 수 있어야 한다.
+    // 시스템은 up인 입력한 숫자를 판단하여지 down인지 알려줘야 한다.
+    // 만약 정답을 맞추지 못하면 지속해서 입력을 받고 결과를 알려준다.
+    // 정답을 맞추면 맞췄다는 메시지와 함께 프로그램을 종료한다.
+
+    // 사용자들은 입력 기회가 5번으로 제한된다.
+    // 즉, 5번 안에 정답을 맞추지 못할 경우 게임이 강제종료된다.
+
+    // 사용자는 게임 시작전에 난이도를 설정할 수 있다.
+    // 난이도는 상, 중, 하 난이도가 존재하며
+    // 난이도별 입력 횟수제한이 다르다.
+
+    var dif = +prompt('난이도를 선택하세요! 1#[1. 상 (3번의 기회) | 2. 중 (6번의 기회), | 3. 하 (10번의 기회)]');
+    var hard = 1;
+    var medium = 2;
+    var easy = 3;
+
+    var userans = +prompt('숫자 입력해주세요');
+
+
+    while (dif = hard) {
+      var tryh = 3;
+      tryh--;
+    }
+    for (tryh; tryh === 0; tryh--) {}
+    while (true) {
+      if (tryh === 0) {
+        alert('패배');
+        break;
+      } else if (tryh > 0) {
+        alert(`${tryh}기회 남았습니다.`);
+        continue;
+      }
+    }
+
+    while (dif = medium) {
+      var trym = 6;
+      trym--;
+    }
+    for (trym; trym === 0; trym--) {}
+    while (true) {
+      if (trym === 0) {
+        alert('패배');
+        break;
+      } else if (trym > 0) {
+        alert(`${trym}기회 남았습니다.`);
+        continue;
+      }
+    }
+
+    while (dif = easy) {
+      var trye = 10;
+      trye--;
+    }
+    for (trye; trye === 0; trye--) {}
+    while (true) {
+      if (trye === 0) {
+        alert('패배');
+        break;
+      } else if (trye > 0) {
+        alert(`${trye}기회 남았습니다.`);
+        continue;
+      }
+    }
+
+    var rn = Math.floor(Math.random() * 99) + 1
+    // console.log('random number:' + rn);
+    var answer = rn;
+    while (true) {
+      if (userans === answer) {
+        alert('정답입니다');
+        break;
+      } else if (userans != answer) {
+        alert('오답입니다');
+        continue;
+      }
+    }
+  </script>
+
+</body>
+
+</html>
