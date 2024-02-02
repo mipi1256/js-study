@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문 For JavaScript</title>
+</head>
+
+<body>
+
+  <script>
+    // var i = 1; // begin
+    // var total = 0;
+
+    // while (1 <= 10) { 
+    //   total += i; // end
+    //   i++; // step
+
+    // while: 반복 횟수가 명확하지 않은 경우 많이 사용.
+    // for: 반복 횟수가 명확한 경우 많이 사용.
+    /* 실행순서는 
+    1) 제어변수 선언 'var=i1;'
+    2) 조건식 판단 'i<=10;'
+    3) 실행문 'total += i;'
+    4) 증감식 'i++'
+    5) 조건식 판단 'i<=10;'
+    6) 실행문 'total +=i;'
+    7) 증감식 순서로 진행되므로 순서에 주의.
+    */
+    var total = 0;
+    for (var i = 1; i <= 10; i++) {
+      total += i;
+    }
+    console.log(total);
+
+    // 1~200까지의 정수 중 6의 배수이면서 12의 배수는 아닌 수의 개수를 출력. (for)
+
+    var cnt = 0;
+    for (var n = 1; n <= 200; n++) {
+      if (n % 6 === 0 && n % 12 !== 0) {
+        cnt++;
+        console.log(`n:${n}`);
+      }
+      // if (n % 6 === 0) {
+      //   if (n % 12 !== 0){
+      //     cnt++;
+      //   }
+      // }
+    }
+    console.log(`cnt: ${cnt}`);
+
+    console.log('-----------------------------------------------------');
+
+    // 정수를 하나 입력받아서
+    // 입력받은 정수까지의 팩토리얼 값을 구하세요.
+    // 팩토리얼 ) 5! -> 5 x 4 x 3 x 2 x 1
+
+    // var pect = 1;
+    // var m = p;
+    // for (var p=+prompt('정수를 입력해주세요'); p<=m; p++){
+    //   pect++;
+    // }
+    // console.log(pect);
+
+    var num = +prompt('정수를 하나 입력하세요.');
+    var fac = 1; //팩토리얼 최종 값을 담을 변수
+    // for (var m=1; m<=num; m++){
+    //   fac *= m;
+    // }
+
+    for(var i=num; i>=1; i--){
+      fac *= i;
+    }
+    console.log(`${num}!: ${fac}`);
+
+
+  </script>
+
+</body>
+
+</html>
