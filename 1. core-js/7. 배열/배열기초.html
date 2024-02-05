@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 배열기초</title>
+</head>
+
+<body>
+
+  <script>
+    
+    
+    //배열의 생성.
+    var fruits = ['딸기', '포도', '복숭아', '사과'];
+    console.log(fruits); // array(4)
+
+    // 배열의 길이 확인
+    console.log('배열의 길이: ' + fruits.length); //4
+
+    // 배열에 데이터 추가하기
+    fruits[4] = '파인애플';
+    console.log(fruits); // array(5)
+    console.log('배열의 길이: ' + fruits.length); // 5
+
+    fruits[fruits.length] = '망고'; // If you put the variable with the length then it will add the value to the last position
+    console.log(fruits); // array(6)
+
+    // 배열 요소 참조
+    var apple = fruits[3];
+    console.log('appple: ' + apple); // apple: '사과'
+
+    // 배열의 반복문 처리
+    for(var i =0; i<fruits.length ; i++) {
+      console.log(`${i+1}번째 과일: ${fruits[i]}`);
+    }
+
+  </script>
+
+</body>
+
+</html>
