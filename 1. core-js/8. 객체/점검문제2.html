@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 객체 점검문제 2</title>
+</head>
+
+<body>
+
+  <script>
+    var userInfo = {
+      userList: [{
+          account: 'kim1234',
+          password: 'kkk1111',
+          username: '김철수'
+        },
+        {
+          account: 'park4321',
+          password: 'ppp4321',
+          username: '박영희'
+        },
+        {
+          account: 'hong9876',
+          password: 'hhh9876',
+          username: '홍길동'
+        },
+      ]
+    }
+    // console.log(userInfo);
+
+    /*
+    - 요구사항
+    1. 사용자에게 계정을 입력받으세요.
+    2. 입력된 계정이 존재하는 계정이 아니라면
+    "존재하지 않는 회원입니다"를 출력하세요.
+    3. 계정이 존재한다면 비밀번호를 입력받으세요.
+    4. 비밀번호가 입력한 아이디에 대응해서 일치한다면
+    "xxx님 환영합니다!"을 출력하고 반복문을 탈출하세요.
+    5. 비밀번호가 다르다면 "비밀번호가 틀렸습니다" 를 출력하세요.
+    6. 로그인이 성공할때까지 반복하세요.
+    */
+
+    //회원객체 (userInfo) 안에 있는 회원배열 (userInfo.userList)를 따로 꺼내서 변수로 선언하면
+    //작성 자체가 쉬워질 것입니다.
+    var users = userInfo.userList
+    console.log(users);
+    console.log(users[0]);
+    console.log(users[0].account);
+
+    while(true) {
+
+      var inputAccount = prompt('아이디를 입력하세요!');
+
+      //This put the data from each object into this variable. 
+      var foundUser = null; //사용자가 입력한 아이디와 일치하는 객체를 담을 변수.
+
+      // Indivual data store into users and then added to foundUser.
+      for(var user of users) {
+        if(inputAccount === user.account) {
+          foundUser = user;
+          break; // 찾았음? 그럼 더 돌릴 필요 없죠?
+        }
+      }
+
+      // 위의 반복문이 끝났음에도 foundUser가 NULL이다? -> 일치하는 객체가 없었다.
+      // foundUser is null? then repeat the top part
+      if(foundUser === null) {
+        alert('아이디가 존재하지 않습니다!')
+        continue; // This is important because the 반복문 have to restart.
+      }
+      // As the id is correctly input then lets put the password
+      var inputPassword = prompt('비밀번호를 입력하세요!');
+      //if the password and the id are correctly input then they log in.
+      if (inputPassword == foundUser.password) {
+        alert(`${foundUser.username}님 환영합니다!`);
+        break;
+      } else {
+        // if they got the password wrong then they get this message. 
+        alert('비민번호가 틀렸습니다!');
+      }
+
+    }
+
+
+
+
+
+    //Try 2
+    // while (true) {
+    //   var inputUsername = prompt('Username 입력해주세요');
+    //   if (inputUsername === users.account) {
+    //     var inputPassword = prompt('Password 입력해주세요.')
+    //     if (inputPasword == users.password) {
+    //       alert(`${users.username}님 환영합니다.`);
+    //     }
+    //   } else if (inputUsername !== users.account) {
+    //     alert('존재하지 않는 회원입니다.')
+    //   }
+    // }
+
+
+
+
+    //NOT GOOD
+    // while (true) {
+    //   var inputUsern = prompt('Username 입력해주세요');
+    //   var inputPass = prompt('Password 입력해주세요');
+
+    //   if (inputUsern === users.account, inputPass === users.password) {
+    //     alert(`${users[userName]}님 환영합니다!`)
+    //     break;
+    //   } else if (inputUsern !== users) {
+    //     alert('존재하지 않는 회원입니다.')
+    //     continue;
+    //   } else if (inputPass !== users) {
+    //     alert('비밀번호 틀렸습니다.')
+    //     continue;
+    //   }
+    // }
+  </script>
+
+
+
+</body>
+
+</html>
