@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 점검문제 1 함수</title>
+</head>
+
+<body>
+
+  <script>
+    /* 
+    Q. n의 약수의 개수를 구하기
+    1. 정수 n을 전달받아 n의 약수들을 출력하고 
+    약수의 개수를 리턴하는 함수 calcDivisor를 정의하세요.
+    2. 약수의 출력은 함수 내부에서 이뤄져야 합니다.
+    3. 힌트) 전달받은 n을 1부터 n까지 지속적으로 나누어
+    나누어 떨어졌을 시 약수의 개수 카운트를 1증가시키고 출력.
+    약수들은 배열에 담아서 한번에 출력해 주세요. (그래야 가로로 출력됨).
+    */
+
+
+
+    function calcDivisor(...n) {
+      var total = 0;
+      console.log(typeof n);
+      for (var i = n; i <= n; i++) {
+        var cnt = 0;
+        for (var j = 1; j <= i; j++) {
+          if (i % j === 0) {
+            cnt++
+          }
+        }
+      }
+      if (cnt === 2) {
+        console.log(i);
+        total++
+      }
+      return n;
+    }
+    var totalNumber = calcDivisor(1, 2, 3, 10, 30, 40, 50, 100, 200, 300, 4500, 5000);
+    console.log(`소수의 개수: ${totalNumber}개`);
+    console.log(totalNumber);
+
+
+    // function calcEven(begin, end) {
+    //   console.log(typeof calcEven);
+    //   for (var n = begin; n <= end; n++) {
+    //     var cnt = 0;
+    //     for (var j = 1; j <= n; j++) {
+    //       if (n % j === 0) {
+    //         cnt++
+    //       }
+    //     }
+    //   }
+    //   if (cnt === 2) {
+    //     console.log(n);
+    //     total++
+    //   }
+    //   return; 
+    // }
+    // var totalNumber = calcEven(1, 100);
+    // console.log(`소수의 개수: ${totalNumber}개`);
+  </script>
+
+</body>
+
+</html>
