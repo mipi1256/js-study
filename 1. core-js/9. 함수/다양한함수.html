@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 다양한함수</title>
+</head>
+
+<body>
+
+  <script>
+    var z = 'hello'; // 전역 변수 (global)
+
+    // 즉시 실행 향수 (정의와 동시에 실행되는 함수)
+    (function (x, y) {
+      console.log(`x + y = ${x+y}`);
+    })(60, 70); // a function without a name that can be called right away.
+
+    console.log('==================================================');
+    // 재귀 함수
+    // 함수 내에서 자기 자신을 다시 호출하여 작업을 수행하는 함수.
+    // 종료 조건을 직접 작성해 주셔야 합니다. 
+
+
+    function countdown(n) {
+      if (n < 0)
+        return; //this return is important! if there is no return then the countdown will keep on going even to the negatives.
+      // So when the countdown reaches to 0 then it will stop the alert. 
+      console.log(n);
+      // alert(n);
+      countdown(n - 1);
+    }
+    countdown(5);
+
+    console.log('==================================================');
+
+    function factorial(n) {
+      // there is a return here because when the factorial keeps on multiplying
+      // It needs to stop when it becomes factorial (0) because if it didn't then the total will turned to be zero
+      if (n === 1) return 1;
+      return n * factorial(n - 1);
+    }
+    console.log(`6!: ${factorial(6)}`);
+
+    console.log('==================================================');
+    // 중첨 함수: 함수 안에 함수를 또 정의한 형태
+
+    function outer() {
+      var x = 1; // outer함수 내에서만 사용 가능한 지역 변수 (local)
+
+      // 헬퍼 함수
+      function inner() {
+        var y = 2; // inner함수 내에서만 사용 가능한 지역 변수 (local)
+        console.log(`x + y = ${x+y}`);
+      }
+      // inner needs to be called inside the function
+      // so when outer is being called outside the function will had the outer. 
+      inner(); //outer함수 내에서만 사용이 가능합니다.
+      // console.log(y); y will be undefined because inner had already finish and will not remember that y was 2.
+      //y는 inner 내에서만 유효함. 그래서 사용이 불가능합니다.
+    }
+
+    outer();
+
+
+    // inner -> outer 함수 내에 선언된 함수 -> outer를 호출하지 않으면 애초에 존재하지 않는 함수.
+    //inner(); //there will be an error because inner doesn't exist. inner can only work if you called outer.
+
+    // there is no way to call x and y because the function on the top it already finished and the data inside the function will not be remembered.
+    // console.log(y); y는 inner 내에서만 유효함.
+    // console.log(x); x는 outer 내에서만 유효함.
+
+    console.log(z); //This will show what z is because it not in a function and it not restricted in one function.
+
+
+</script>
+
+</body>
+
+</html>
