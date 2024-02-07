@@ -20,28 +20,47 @@
     약수들은 배열에 담아서 한번에 출력해 주세요. (그래야 가로로 출력됨).
     */
 
-
-
-    function calcDivisor(...n) {
-      var total = 0;
-      console.log(typeof n);
-      for (var i = n; i <= n; i++) {
-        var cnt = 0;
-        for (var j = 1; j <= i; j++) {
-          if (i % j === 0) {
-            cnt++
-          }
+    function calcDivisor(targetNumber) {
+      var divisors = [];
+      // var count = 0;
+      for (var i = 1; i <= targetNumber; i++) {
+        if (targetNumber % i === 0) {
+          divisors.push(i);
+          // count++;
         }
       }
-      if (cnt === 2) {
-        console.log(i);
-        total++
-      }
-      return n;
+      console.log(`${targetNumber}의 약수: ${divisors}`);
+      //count 변수로 숫자를 직접 세도 되지만, 약수 배열이 있으니까 요소의 개수가 약수의 개수일 것이다. 
+      return divisors.length;
+      // return count; 
     }
-    var totalNumber = calcDivisor(1, 2, 3, 10, 30, 40, 50, 100, 200, 300, 4500, 5000);
-    console.log(`소수의 개수: ${totalNumber}개`);
-    console.log(totalNumber);
+
+    var divCount = calcDivisor(72);
+    console.log(`약수의 개수: ${divCount}개`);
+
+
+
+
+    // function calcDivisor(...n) {
+    //   var total = 0;
+    //   console.log(typeof n);
+    //   for (var i = n; i <= n; i++) {
+    //     var cnt = 0;
+    //     for (var j = 1; j <= i; j++) {
+    //       if (i % j === 0) {
+    //         cnt++
+    //       }
+    //     }
+    //   }
+    //   if (cnt === 2) {
+    //     console.log(i);
+    //     total++
+    //   }
+    //   return n;
+    // }
+    // var totalNumber = calcDivisor(1, 2, 3, 10, 30, 40, 50, 100, 200, 300, 4500, 5000);
+    // console.log(`소수의 개수: ${totalNumber}개`);
+    // console.log(totalNumber);
 
 
     // function calcEven(begin, end) {
