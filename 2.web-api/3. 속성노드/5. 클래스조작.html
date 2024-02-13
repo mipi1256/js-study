@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 클래스조작</title>
+
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background: lightgray;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .blue {
+      color: blue;
+    }
+
+    .circle {
+      border-radius: 50%;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="box red">Hello</div>
+
+  <script>
+
+    const $box = document.querySelector('.box');
+
+    console.log($box.attributes.class.value);
+    console.log($box.getAttribute('class'));
+    console.log($box.className);
+
+    // When there are two or more class you need to add a space in between
+    // $box.setAttribute('class', 'box blue');
+    // $box.className = 'box blue';
+
+    // 클래스를 각각 조작할 때는 classList 프로퍼티를 사용하는 게 좋습니다.
+    console.log($box.classList);
+
+    // 요소에 클래스를 추가
+    // Add a new class into the element.
+    // $box.className = 'box blue circle';
+    $box.classList.add('circle');
+    $box.classList.add('abc', 'def', 'ghi'); // if you add a coma in between then you can add multiple class values to the element
+
+    // 요소에 특정 클래스를 교체
+    // Replaces the class name to a new one.
+    $box.classList.replace('red', 'blue');
+
+    // 요소에 특정 클래스를 삭제
+    // Removes a specific class in the element.
+    $box.classList.remove('circle');
+    $box.classList.remove('abc', 'def', 'ghi'); // To remove multiple class use a coma in between. 
+
+    // 요소에 특정 클래스가 존재하는지 확인
+    // To check if the element has the class named 'name of the class'
+    console.log($box.classList.contains('red'));
+
+    // toggle(): 해당 클래스가 존재하면 삭제, 존재하지 않으면 추가.
+    /*
+    If the element has the class it will delete it
+    If the element doesn't have the class it will add it.
+    */
+    $box.classList.toggle('circle');
+    $box.classList.toggle('blue');
+
+
+
+
+  </script>
+
+</body>
+
+</html>
