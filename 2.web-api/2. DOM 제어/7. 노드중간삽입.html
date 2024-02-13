@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 노드중간삽입</title>
+</head>
+
+<body>
+
+  <ul id="fruits">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Grape</li>
+  </ul>
+
+  <script>
+
+    const $fruits = document.getElementById('fruits');
+
+    const $li = document.createElement('li');
+    $li.textContent = 'Mango';
+  
+    // This will add the mango li next to grape
+    // $fruits.appendChild($li);
+
+    // This will add mango before the last child
+    // 두 번째 매개값으로 전달된 노드는 반드시
+    // insertBefore를 호출한 노드의 자식이어야 합니다.
+    $fruits.insertBefore($li, $fruits.lastElementChild);
+
+    const $li2 = document.createElement('li');
+    $li2.textContent = 'Orange';
+
+    // This will add orange before the second child
+    $fruits.insertBefore($li2, document.querySelector('#fruits > li:nth-child(2)'));
+
+
+  </script>
+
+</body>
+
+</html>

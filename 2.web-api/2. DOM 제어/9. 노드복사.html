@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 노드복사</title>
+</head>
+
+<body>
+
+  <ul id="fruits">
+    <li>Apple</li>
+  </ul>
+
+  <script>
+
+    const $fruits = document.getElementById('fruits');
+    const $apple = $fruits.firstElementChild;
+
+    // apple의 사본 생성 (얕은 복사: 자기 자신 노드만 복사)
+    // This will get the element and not the text.
+    const $shallowClone = $apple.cloneNode(); // default = false
+    console.log($shallowClone);
+
+    //This will get the text inside apple to be added into the shallowclone.
+    $shallowClone.textContent = $apple.textContent; 
+    // This will add the shallowClone to the parent element
+    $fruits.appendChild($shallowClone);
+
+    // apple의 사본 생성 (깊은 복사: 자기 자신을 포함한 모든 자손 노드를 복제)
+    // This will duplicate everything on the selected element
+    const $deepClone = $apple.cloneNode(true); // true will make a duplicate of everything in the element
+    $fruits.appendChild($deepClone);
+
+    // ul을 깊게 복사
+    const $ulClone = $fruits.cloneNode(true);
+    $fruits.appendChild($ulClone);
+
+
+
+  </script>
+
+</body>
+
+</html>

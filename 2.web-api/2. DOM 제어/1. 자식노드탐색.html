@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript DOM 제어 자식노드탐색</title>
+</head>
+
+<body>
+
+  <ul id="fruits">
+    <li class="apple">Apple</li>
+    <li class="banana">Banana</li>
+    <li class="grape">Grape</li>
+  </ul>
+
+  <div id="test">
+
+  </div>
+
+
+  <script>
+
+    // 노드 탐색의 기점이 되는 ul요소 취득
+    // This is the parent
+    const $fruits = document.getElementById('fruits');
+
+    // 기준 노드의 모든 자식 노드를 탐색. (텍스트 노드 포함)
+    // This will select all of the child nodes inside the parent even the text and the enter space
+    const $childNodes = $fruits.childNodes; // 공백을 텍스트로 인식해서 모두 탐색.
+    console.log($childNodes);
+
+    // 기존 노드의 모든 자식 노드를 탐색. (텍스트 노드 제외)
+    // This will select the children nodes and not the other spaces. *This is use most of the time*
+    const $children = $fruits.children;
+    console.log($children); // 유사배열객체로 리턴
+
+    // 기준 노도의 첫번째 자식 노드를 탐색
+    // This will select the first child of the parent.
+    const $firstChild = $fruits.firstChild;
+    console.log('first-child:' + $firstChild); // firstChild는 텍스트노드 나올 가능성 있음.
+    console.log('first-element-child: ' + $fruits.firstElementChild); // 첫번째 자식 요소 취득
+    console.log('first-element-child: ' + $fruits.lastElementChild); // 마지막 자식 요소 취득
+
+    // 기준 노드에 자식노드가 있는지의 여부를 확인
+    // 텍스트 노드가 있을 시에는 true가 나올 수 있음.
+    const $test = document.getElementById('test');
+    console.log($test.hasChildNodes());
+
+    // 텍스트 노드를 제외한 자식 요소노드의 존재 여부 확인
+    console.log(!!$test.children.length); // Length = 0, no children
+    console.log(!!$fruits.children.length); // Length = 3, so they are children. 
+    /* This will check the length of the parent and see if there are children. 
+    If the length is 0 then it will show false meaning there are no children. 
+    If the length is 1 or more then it will show true, meaning that there are some children below the parent
+    */
+
+  </script>
+
+</body>
+
+</html>

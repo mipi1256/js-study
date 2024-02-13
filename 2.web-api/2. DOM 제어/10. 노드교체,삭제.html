@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 노드교체, 삭제</title>
+</head>
+
+<body>
+
+  <ul id="fruits">
+    <li>Apple</li>
+    <li>Banana</li>
+  </ul>
+
+  <script>
+
+    const $fruits = document.getElementById('fruits');
+
+    const $mango = document.createElement('li');
+    $mango.textContent = 'Mango';
+
+    // This will replace any child with other values. 
+    // replaceChild(new, old);
+    $fruits.replaceChild($mango, $fruits.firstElementChild);
+
+    // This will remove any child you want. 
+    $fruits.removeChild($fruits.lastElementChild);
+
+
+
+  </script>
+
+</body>
+
+</html>
