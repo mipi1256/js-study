@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Quiz01</title>
+</head>
+
+<body>
+
+  <!--
+        이벤트와 요소 취득 및 문법을 활용하여
+        카운트를 누적해서 올리거나 내려주세요.
+        0아래로는 내려가지 않게 하세요.
+    -->
+
+  <h2>자바스크립트 카운트</h2>
+  <input type="text" id="result" value="0" readonly>
+  <button id="plus">+</button>
+  <button id="minus">-</button>
+
+  <script>
+
+    const $count = document.getElementById('result');
+    const $plus = document.getElementById('plus');
+    const $minus = document.getElementById('minus');
+
+    $plus.addEventListener('click', () => {
+      $count.value++;
+    });
+
+    $minus.addEventListener('click', e =>{
+      console.log(typeof $count.value); //the $count.value was a string and not a number
+
+      // Two ways to solve this problem is by
+      // adding a + infront of $count.value -> +$count.value
+      // or add '' to the zero -> '0'
+      if(+$count.value === 0) {
+        alert('0 미만으로는 내릴 수가 없습니다.');
+        return;
+      }
+
+      $count.value--;
+    });
+
+
+
+    // $plus.addEventListener('click', e => {
+    //   $input.setAttribute('value', +1)
+    // });
+
+    // $minus.addEventListener('click', e => {
+    //   $input.setAttribute('value', );
+    // })
+
+
+  </script>
+
+</body>
+
+</html>
