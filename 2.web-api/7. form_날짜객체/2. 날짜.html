@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 날째 객체</title>
+</head>
+
+<body>
+
+  <script>
+
+    const date = new Date(); // 오늘 날짜 정보를 가진 객체
+    console.log(date); // 지금 날짜 
+    console.log(date.getTime()); //날짜를 밀리초로 구함  [기준: 1970 01 01 00:00]
+
+    const millis = 1573735023000;
+    const day = new Date(millis);
+    console.log(day);
+
+    console.log('==================================================');
+
+    console.log(date);
+    console.log(date.getFullYear()); // The year (년)
+    console.log(date.getMonth()+1); // The month (월) The month start with 0 not 1. Like the index
+    console.log(date.getDate()); // The day (일)
+    console.log(date.getHours()); // The hours (시)
+    console.log(date.getMinutes()); // The minutes (분)
+    console.log(date.getSeconds()); // The seconds (초)
+    console.log(date.getDay()); // The day (요일) Start with Sunday and it will be 0 [Sunday(0), Monday(1), Tuesday(2), Wednesday(3), Thrusday(4), Friday(5), Saturday(6)]
+
+    console.log('==================================================');
+
+    // 오늘 날짜 - 특덩 날짜 (밀리초)
+
+    const gap = date.getTime() - millis;
+    console.log(gap);
+
+    let time;
+    if(gap < 60 * 60 * 24 * 1000) { // 1일 전
+      if(gap < 60 * 60 * 1000){ // 1시간
+        time = '방금 전'; // Less than one hour
+      } else {
+        time = gap / (60 * 60 * 1000) + '시간 전'; // More than a hour
+      }
+
+    } else { // 1일 이상 넘어간 경우
+      const checkTime = new Date(gap);
+      console.log(checkTime);
+      const calcYear = checkTime.getFullYear() - 1970;
+      if(calcYear > 0) {
+        time = calcYear + '년 전';
+      } else {
+        time = `${checkTime.getMonth()+1} 개월 전`;
+      }
+    }
+
+    console.log(`지정된 날짜는 오늘로부터 ${time} 입니다.`);
+
+  </script>
+
+</body>
+
+</html>
