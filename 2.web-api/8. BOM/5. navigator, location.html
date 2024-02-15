@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOM Navigator & Location</title>
+</head>
+
+<body>
+
+  <button id="btn">네이버로 이동!</button>
+
+  <script>
+
+    const $btn = document.getElementById('btn');
+
+    $btn.onclick = () => {
+      // location 객체는 현재 활성화 된 웹 페이지의 URL 정보를 포함흐는 window객체의 프로퍼티
+      console.log(location);
+
+      // location.href: 전체 URL이 포함된 문자열. 이게 변경된다면 변경된 페이지로 이동합니다.
+      // You can go back to the original page 
+      // location.href = 'https://www.naver.com';
+
+      // 새로고침 함수: reload()
+      // location.reload();
+
+      // replace('URL'): 현재 리소스를 대체하는 새로운 URL로 이동합니다.
+      // 뒤로가기 기능을 사용할 수 없습니다.
+      // You cannot go back to the page where you were originally. 
+      location.replace('https://www.naver.com');
+    }
+
+
+
+    // 성공 시 실행할 콜백 함수
+    function success(position) {
+      console.log(position);
+      console.log('워도: ' + position.coords.latitude);
+      console.log('경도: ' + position.coords.longitude);
+    }
+
+    // 실해 시 실행할 콜백 함수
+    function fail() {
+      alert('위치정보를 얻는 데 실패했습니다. 위치 정보를 승인해 주세요.')
+      console.log(error);
+    }
+
+
+
+
+
+
+    (function() {
+      // getCurrentPosition(위치 정보 승인 실행할 함수, 싪패했을 시 실행할 함수);
+      navigator.geolocation.getCurrentPosition(success, fail);
+    })();
+
+  </script>
+
+</body>
+
+</html>
