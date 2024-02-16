@@ -78,30 +78,11 @@ const renderToLog = ({operation: mark, prevResult, number, result}) => {
 
 
 
-// 더하기 버튼 이벤트 핸들러
-const addHandler = () => {
-  calculate('ADD');
-}
-
-
-const subHandler = () => {
-  calculate('SUB');
-}
-
-
-const multiHandler = () => {
-  calculate('MULTI');
-}
-
-const divideHandler = () => {
-  calculate('DIVIDE');
-}
-
-
-
-
-
-
+// 버튼 이벤트 핸들러
+const addHandler = () => calculate('ADD');
+const subHandler = () => calculate('SUB');
+const multiHandler = () => calculate('MULTI');
+const divideHandler = () => calculate('DIVIDE');
 
 
 // ============ 이벤트 핸들러 바인딩 ============ //
